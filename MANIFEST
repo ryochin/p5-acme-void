@@ -4,4 +4,4 @@ MANIFEST
 README
 t/01_void.t
 t/02_object.t
-void.pm
+Void.pm

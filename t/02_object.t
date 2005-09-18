@@ -2,7 +2,7 @@ package __test;
 
 use strict;
 use lib qw(blib/lib);
-use Acme::void;
+use Acme::Void;
 
 sub new {
     return bless \my $self, shift;

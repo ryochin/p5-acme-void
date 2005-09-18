@@ -1,8 +1,8 @@
 #
-# $Id: void.pm 2 2005-09-18 17:53:54Z ryo $
+# $Id$
 #
 
-package Acme::void;
+package Acme::Void;
 
 use strict;
 use 5.006;
@@ -38,11 +38,11 @@ __END__
 
 =head1 NAME
 
-Acme::void - Making void things more void
+Acme::Void - Making void things more void
 
 =head1 SYNOPSIS
 
- use Acme::void;
+ use Acme::Void;
 
  # showing explicitly it's under void context.
  void = do_something();
@@ -51,7 +51,7 @@ Acme::void - Making void things more void
  my $str = void;
 
 
- use Acme::void qw(:all);
+ use Acme::Void qw(:all);
 
  # you might like other languages.
  my $foo = nil;

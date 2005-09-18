@@ -1,7 +1,7 @@
 
 use strict;
 use lib qw(blib/lib);
-use Acme::void;
+use Acme::Void;
 
 push my @test, sub {
 

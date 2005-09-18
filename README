@@ -1,8 +1,8 @@
 NAME
-    Acme::void - Making void things more void
+    Acme::Void - Making void things more void
 
 SYNOPSIS
-     use Acme::void;
+     use Acme::Void;
 
      # showing explicitly it's under void context.
      void = do_something();
@@ -10,7 +10,7 @@ SYNOPSIS
      # you can use it just as an alternative to built-in 'undef'.
      my $str = void;
 
-     use Acme::void qw(:all);
+     use Acme::Void qw(:all);
 
      # you might like other languages.
      my $foo = nil;
