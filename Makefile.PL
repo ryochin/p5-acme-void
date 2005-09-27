@@ -7,6 +7,7 @@ WriteMakefile(
     VERSION_FROM      => 'Void.pm', # finds $VERSION
     PREREQ_PM         => {
 	Want => 0.01,
+	Class::BlackHole => 0.01,
     }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'Void.pm', # retrieve abstract from module

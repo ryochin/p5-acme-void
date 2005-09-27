@@ -6,7 +6,7 @@ use Acme::Void;
 push my @test, sub {
 
     eval {
-	void;
+	void->foo;
     };
     return if $@;
 
@@ -16,7 +16,7 @@ push my @test, sub {
 sub {
 
     eval {
-	void &foo;
+	void->void;
     };
     return if $@;
 
@@ -26,29 +26,7 @@ sub {
 sub {
 
     eval {
-	void = &foo;
-    };
-    return if $@;
-
-    return 1;
-},
-
-sub {
-
-    my $foo;
-    eval {
-	$foo = void;
-    };
-    return if $@;
-    return if $foo;
-
-    return 1;
-},
-
-sub {
-
-    eval {
-	void __PACKAGE__->foo;
+	void()->foo;
     };
     return if $@;
 
@@ -58,13 +36,24 @@ sub {
 sub {
 
     eval {
-	void = __PACKAGE__->foo;
+	void void->void;
     };
     return if $@;
 
     return 1;
-};
+},
 
+sub {
+
+    eval {
+	void = void->void;
+    };
+    return if $@;
+
+    return 1;
+},
+
+;
 
 sub foo { 1 }
 

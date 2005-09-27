@@ -7,10 +7,11 @@ package Acme::Void;
 use strict;
 use 5.006;
 use vars qw($VERSION);
+use base qw(Class::BlackHole);
 use warnings;
 use Want;
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub import {
     my $class = shift;
@@ -24,7 +25,9 @@ sub import {
     for(@void){
 	*{$pkg . "::$_"} = sub :lvalue {
 	    lnoreturn
-		if want('LVALUE');
+		if want qw(LVALUE ASSIGN);
+	    return my $self = bless sub {}, $class
+		if want qw(OBJECT LVALUE);
 	    return;
 	};
     }
@@ -45,10 +48,16 @@ Acme::Void - Making void things more void
  use Acme::Void;
 
  # showing explicitly it's under void context.
+ void do_something();
+
+ # or a bit more explicitly.
  void = do_something();
 
- # you can use it just as an alternative to built-in 'undef'.
+ # you can use it just like an alternative to built-in 'undef'.
  my $str = void;
+
+ # void yields void.
+ void->foo;    # always void
 
 
  use Acme::Void qw(:all);
@@ -71,6 +80,10 @@ Acme::Void - Making void things more void
     $self->noop;    # no way!
  }
 
+ # the equality.
+ void = empty = nil = noop = nothing = null = undef;
+ void = void->void;
+
 =head1 DESCRIPTION
 
 You must need 'void' and other void-ish functions to write
@@ -91,7 +104,7 @@ with ':all' switch.
 
 =head1 DEPENDENCY
 
-Want
+Want, Class::BlackHole
 
 =head1 AUTHOR
 
