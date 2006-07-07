@@ -5,10 +5,16 @@ SYNOPSIS
      use Acme::Void;
 
      # showing explicitly it's under void context.
+     void do_something();
+
+     # or a bit more explicitly.
      void = do_something();
 
-     # you can use it just as an alternative to built-in 'undef'.
+     # you can use it just like an alternative to built-in 'undef'.
      my $str = void;
+
+     # void yields void.
+     void->foo;    # always void
 
      use Acme::Void qw(:all);
 
@@ -30,6 +36,10 @@ SYNOPSIS
         $self->noop;    # no way!
      }
 
+     # the equality.
+     void = empty = nil = noop = nothing = null = undef;
+     void = void->void;
+
 DESCRIPTION
     You must need 'void' and other void-ish functions to write cool codes.
 
@@ -42,7 +52,7 @@ FUNCTIONS
         with ':all' switch.
 
 DEPENDENCY
-        Want
+        Want, Class::BlackHole
 
 AUTHOR
         Okamoto RYO <ryo@aquahill.net>

@@ -9,9 +9,10 @@ use 5.006;
 use vars qw($VERSION);
 use base qw(Class::BlackHole);
 use warnings;
+no  warnings "redefine";
 use Want;
 
-$VERSION = '0.02';
+$VERSION = '0.02_1';
 
 sub import {
     my $class = shift;
@@ -101,6 +102,8 @@ Just provides the 'void way'.
 
 Synonyms to B<void>. To import them, don't forget to use the module
 with ':all' switch.
+
+=back
 
 =head1 DEPENDENCY
 
