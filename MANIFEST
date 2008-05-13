@@ -1,10 +1,12 @@
 Changes
+lib/Acme/Void.pm
 Makefile.PL
 MANIFEST
 README
-lib/Acme/Void.pm
 t/01_void.t
 t/02_method_call.t
 t/03_object.t
 t/04_trick.t
 t/05_sample.t
+t/98_perl-critic.t
+t/99_pod-coverage.t

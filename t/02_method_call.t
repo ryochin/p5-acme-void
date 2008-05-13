@@ -1,3 +1,6 @@
+#
+# $Id$
+
 package __test;
 
 use strict;

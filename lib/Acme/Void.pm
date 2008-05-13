@@ -12,7 +12,7 @@ use warnings;
 no  warnings "redefine";
 use Want;
 
-$VERSION = '0.02_1';
+$VERSION = '0.03';
 
 sub import {
     my $class = shift;
@@ -22,7 +22,7 @@ sub import {
     push @void, qw(empty nil noop nothing null)
 	if scalar grep { $_ eq ':all' } @_;
 
-    no strict 'refs';
+    no strict 'refs';    ## no critic
     for(@void){
 	*{$pkg . "::$_"} = sub :lvalue {
 	    lnoreturn
@@ -109,9 +109,13 @@ with ':all' switch.
 
 Want, Class::BlackHole
 
+=head1 LICENSE
+
+This module is distributed under the same terms as perl itself.
+
 =head1 AUTHOR
 
-Okamoto RYO <ryo@aquahill.net>
+Ryo OKAMOTO <ryo at aquahill dot net>
 
 =cut
 

@@ -1,6 +1,8 @@
-#!/usr/bin/perl --
+#
+# $Id$
 
 use strict;
+use lib qw(blib/lib);
 use Acme::Void qw(:all);
 
 print "1..1\n";
