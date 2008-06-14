@@ -2,79 +2,25 @@
 # $Id$
 
 use strict;
-use lib qw(blib/lib);
+use lib qw(blib);
+use Test::More tests => 5;
 use Acme::Void;
 
-push my @test, sub {
+eval { void };
+ok( ! $@, "call" );
 
-    eval {
-	void;
-    };
-    return if $@;
+eval { void &foo };
+ok( ! $@, "call" );
 
-    return 1;
-},
+my $foo;
+eval { $foo = void };
+ok( ! $@, "call" );
 
-sub {
+eval { void __PACKAGE__->foo };
+ok( ! $@, "call" );
 
-    eval {
-	void &foo;
-    };
-    return if $@;
-
-    return 1;
-},
-
-sub {
-
-    eval {
-	void = &foo;
-    };
-    return if $@;
-
-    return 1;
-},
-
-sub {
-
-    my $foo;
-    eval {
-	$foo = void;
-    };
-    return if $@;
-    return if $foo;
-
-    return 1;
-},
-
-sub {
-
-    eval {
-	void __PACKAGE__->foo;
-    };
-    return if $@;
-
-    return 1;
-},
-
-sub {
-
-    eval {
-	void = __PACKAGE__->foo;
-    };
-    return if $@;
-
-    return 1;
-};
-
+eval { void = __PACKAGE__->foo };
+ok( ! $@, "call" );
 
 sub foo { 1 }
-
-printf "1..%d\n", scalar @test;
-for(0..$#test){
-    $test[$_]->()
-	or print "not ";
-
-    printf "ok %d\n", $_ + 1;
-}
 

@@ -1,63 +1,52 @@
-NAME
-    Acme::Void - Making void things more void
+Acme-Void
 
-SYNOPSIS
-     use Acme::Void;
+The README is used to introduce the module and provide instructions on
+how to install the module, any machine dependencies it may have (for
+example C compilers and installed libraries) and any other information
+that should be provided before the module is installed.
 
-     # showing explicitly it's under void context.
-     void do_something();
-
-     # or a bit more explicitly.
-     void = do_something();
-
-     # you can use it just like an alternative to built-in 'undef'.
-     my $str = void;
-
-     # void yields void.
-     void->foo;    # always void
+A README file is required for CPAN modules since CPAN extracts the README
+file from a module distribution so that people browsing the archive
+can use it to get an idea of the module's uses. It is usually a good idea
+to provide version information here so that people can decide whether
+fixes for the module are worth downloading.
 
 
-     use Acme::Void qw(:all);
+INSTALLATION
 
-     # you might like other languages.
-     my $foo = nil;
-     my $bar = null;
+To install this module, run the following commands:
 
-     # with broken love...
-     if( $your_love eq nothing ){ 
-        my @heart = empty;
-     }
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
 
-     # no operations here.
-     noop;
+SUPPORT AND DOCUMENTATION
 
-     # or OOP!
-     sub meet_a_cute_girl {
-        my $self = shift;
-        $self->noop;    # no way!
-     }
+After installing, you can find documentation for this module with the
+perldoc command.
 
-     # the equality.
-     void = empty = nil = noop = nothing = null = undef;
-     void = void->void;
+    perldoc Acme::Void
 
-DESCRIPTION
-    You must need 'void' and other void-ish functions to write cool codes.
+You can also look for information at:
 
-FUNCTIONS
-    void
-        Just provides the 'void way'.
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Acme-Void
 
-    empty, nil, noop, nothing, null
-        Synonyms to void. To import them, don't forget to use the module
-        with ':all' switch.
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Acme-Void
 
-DEPENDENCY
-    Want, Class::BlackHole
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Acme-Void
 
-LICENSE
-    This module is distributed under the same terms as perl itself.
+    Search CPAN
+        http://search.cpan.org/dist/Acme-Void
 
-AUTHOR
-    Ryo OKAMOTO <ryo at aquahill dot net>
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008 Ryo Okamoto
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 

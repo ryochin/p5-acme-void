@@ -1,6 +1,5 @@
 #
 # $Id$
-#
 
 package Acme::Void;
 
@@ -113,11 +112,11 @@ This module is distributed under the same terms as perl itself.
 
 =head1 AUTHOR
 
-Ryo OKAMOTO <ryo at aquahill dot net>
+Ryo Okamoto C<< <ryo at aquahill dot net> >>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2007-2008 Ryo Okamoto, all rights reserved.
+Copyright 2005-2008 Ryo Okamoto, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

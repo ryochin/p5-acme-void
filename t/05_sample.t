@@ -2,10 +2,9 @@
 # $Id$
 
 use strict;
-use lib qw(blib/lib);
+use lib qw(blib);
+use Test::More tests => 1;
 use Acme::Void qw(:all);
-
-print "1..1\n";
 
 eval {
 
@@ -27,15 +26,14 @@ eval {
 
     __PACKAGE__->bar;
 };
-print "not " if $@;
-print "ok\n";
+ok( ! $@, "sample code" );
 
 sub foo { 1 };
 
 sub bar {
-  my $class = shift;
-  $class->void;
-  void = main->foo;
-  return void;
+    my $class = shift;
+    $class->void;
+    void = main->foo;
+    return void;
 }
 

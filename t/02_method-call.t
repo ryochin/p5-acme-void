@@ -4,7 +4,6 @@
 package __test;
 
 use strict;
-use lib qw(blib/lib);
 use Acme::Void;
 
 sub new {
@@ -19,13 +18,10 @@ sub run {
 package main;
 
 use strict;
-
-print "1..1\n";
+use lib qw(blib);
+use Test::More tests => 1;
 
 my $obj = __test->new;
-eval {
-    $obj->run;
-};
-print "not " if $@;
-printf "ok %d\n", 1;
+eval { $obj->run };
+ok( ! $@, "method call" );
 
