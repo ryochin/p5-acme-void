@@ -38,8 +38,6 @@ sub import {
 
 __END__
 
-=pod
-
 =head1 NAME
 
 Acme::Void - Making void things more void
@@ -117,5 +115,10 @@ This module is distributed under the same terms as perl itself.
 
 Ryo OKAMOTO <ryo at aquahill dot net>
 
-=cut
+=head1 COPYRIGHT & LICENSE
+
+Copyright 2007-2008 Ryo Okamoto, all rights reserved.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
 

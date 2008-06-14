@@ -16,6 +16,7 @@ SYNOPSIS
      # void yields void.
      void->foo;    # always void
 
+
      use Acme::Void qw(:all);
 
      # you might like other languages.
@@ -52,8 +53,11 @@ FUNCTIONS
         with ':all' switch.
 
 DEPENDENCY
-        Want, Class::BlackHole
+    Want, Class::BlackHole
+
+LICENSE
+    This module is distributed under the same terms as perl itself.
 
 AUTHOR
-        Okamoto RYO <ryo@aquahill.net>
+    Ryo OKAMOTO <ryo at aquahill dot net>
 
