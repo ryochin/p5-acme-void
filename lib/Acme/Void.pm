@@ -1,5 +1,4 @@
 #
-# $Id$
 
 package Acme::Void;
 
@@ -18,7 +17,7 @@ sub import {
     my $pkg = caller(0);
 
     my @void = qw(void);
-    push @void, qw(empty nil noop nothing null)
+    push @void, qw(empty nil noop nothing null pass)
 	if scalar grep { $_ eq ':all' } @_;
 
     no strict 'refs';    ## no critic
@@ -47,9 +46,11 @@ Acme::Void - Making void things more void
 
  # showing explicitly it's under void context.
  void do_something();
+ void $self->bark;
 
  # or a bit more explicitly.
  void = do_something();
+ void = $self->bark;
 
  # you can use it just like an alternative to built-in 'undef'.
  my $str = void;
@@ -65,8 +66,8 @@ Acme::Void - Making void things more void
  my $bar = null;
 
  # with broken love...
- if( $your_love eq nothing ){ 
-    my @heart = empty;
+ if( our $love eq nothing ){
+    my @heart = empty ;;
  }
 
  # no operations here.
@@ -106,9 +107,9 @@ with ':all' switch.
 
 Want, Class::BlackHole
 
-=head1 LICENSE
+=head1 SEE ALSO
 
-This module is distributed under the same terms as perl itself.
+Acme::Boolean
 
 =head1 AUTHOR
 
@@ -116,7 +117,7 @@ Ryo Okamoto C<< <ryo at aquahill dot net> >>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2005-2008 Ryo Okamoto, all rights reserved.
+Copyright 2005-2010 Ryo Okamoto, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

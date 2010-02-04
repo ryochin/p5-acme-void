@@ -1,7 +1,7 @@
 Revision history for Perl extension Acme::Void.
 
 0.03  
-	+ 
+	+ added 'pass'.
 
 0.02  Tue Sep 27 22:11:00 2005
 	+ now void->foo allowed.
