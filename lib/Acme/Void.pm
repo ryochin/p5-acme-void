@@ -10,6 +10,8 @@ use warnings;
 no  warnings "redefine";
 use Want;
 
+# ABSTRACT: Making void things more void
+
 $VERSION = '0.03';
 
 sub import {
@@ -25,7 +27,7 @@ sub import {
 	*{$pkg . "::$_"} = sub :lvalue {
 	    lnoreturn
 		if want qw(LVALUE ASSIGN);
-	    return my $self = bless sub {}, $class
+	    return my $self = bless \ my $scalar, $class
 		if want qw(OBJECT LVALUE);
 	    return;
 	};
@@ -35,6 +37,8 @@ sub import {
 1;
 
 __END__
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -111,14 +115,19 @@ Want, Class::BlackHole
 
 Acme::Boolean
 
+=head1 REPOSITORY
+
+https://github.com/ryochin/p5-acme-void
+
 =head1 AUTHOR
 
-Ryo Okamoto C<< <ryo at aquahill dot net> >>
+Ryo Okamoto E<lt>ryo@aquahill.netE<gt>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2005-2010 Ryo Okamoto, all rights reserved.
+Copyright (c) Ryo Okamoto, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
+=cut
