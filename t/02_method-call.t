@@ -1,6 +1,3 @@
-#
-# $Id$
-
 package __test;
 
 use strict;
@@ -19,9 +16,12 @@ package main;
 
 use strict;
 use lib qw(blib);
-use Test::More tests => 1;
+use Test::More;
 
 my $obj = __test->new;
 eval { $obj->run };
 ok( ! $@, "method call" );
 
+done_testing;
+
+__END__

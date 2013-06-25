@@ -1,9 +1,6 @@
-#
-# $Id$
-
 use strict;
 use lib qw(blib);
-use Test::More tests => 1;
+use Test::More;
 use Acme::Void qw(:all);
 
 eval {
@@ -37,3 +34,6 @@ sub bar {
     return void;
 }
 
+done_testing;
+
+__END__

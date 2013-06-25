@@ -1,9 +1,6 @@
-#
-# $Id$
-
 use strict;
 use lib qw(blib);
-use Test::More tests => 5;
+use Test::More;
 use Acme::Void;
 
 eval { void };
@@ -24,3 +21,6 @@ ok( ! $@, "call" );
 
 sub foo { 1 }
 
+done_testing;
+
+__END__

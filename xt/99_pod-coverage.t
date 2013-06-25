@@ -1,6 +1,3 @@
-#
-# $Id$
-
 use strict;
 use warnings;
 use Test::More;
@@ -10,3 +7,4 @@ plan skip_all => "Test::Pod::Coverage 1.06 required for testing POD coverage"
 	if $@;
 all_pod_coverage_ok();
 
+__END__
